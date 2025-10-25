@@ -4,27 +4,39 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlesListPage from "./pages/ArticlesList";
 import ArticlesPage from "./pages/ArticlesPage";
+import Layout from "./pages/Layout";
 
 const routes = [
   {
     path: "/",
-    element: <HomePage />,
-  }, {
-    path: "/about",
-    element: <AboutPage/>
-  }, {
-    path: "/articles",
-    element: <ArticlesListPage/>
-  },{
-    path: "/articles/individual",
-    element: <ArticlesPage/>
-  }
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/articles",
+        element: <ArticlesListPage />,
+      },
+      {
+        path: "/articles/individual",
+        element: <ArticlesPage />,
+      },
+    ],
+  },
 ];
 
 const router = createBrowserRouter(routes);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+      <RouterProvider router={router} />
+  );
 }
 
 export default App;
