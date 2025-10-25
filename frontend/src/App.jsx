@@ -5,11 +5,13 @@ import AboutPage from "./pages/AboutPage";
 import ArticlesListPage from "./pages/ArticlesListPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import Layout from "./pages/Layout";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const routes = [
   {
     path: "/",
     element: <Layout />,
+    errorElement: <NotFoundPage/>,
     children: [
       {
         path: "/",
