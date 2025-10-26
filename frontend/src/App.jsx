@@ -3,7 +3,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlesListPage from "./pages/ArticlesListPage";
-import ArticlesPage from "./pages/ArticlesPage";
+import ArticlesPage, { loader as articleLoader } from "./pages/ArticlePage";
 import Layout from "./pages/Layout";
 import NotFoundPage from "./pages/NotFoundPage";
 
@@ -11,7 +11,7 @@ const routes = [
   {
     path: "/",
     element: <Layout />,
-    errorElement: <NotFoundPage/>,
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: "/",
@@ -28,6 +28,7 @@ const routes = [
       {
         path: "/articles/:name",
         element: <ArticlesPage />,
+        loader: articleLoader,
       },
     ],
   },
