@@ -1,6 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
 
 export default function NavBar() {
+  // const isLoggedIn = false;
+  // // const email = "bill@bob.com";
+  const isLoggedIn = true;
+  const email = "bill@bob.com";
+
+  const navigate = useNavigate();
+
   return (
     <nav>
       <ul>
@@ -13,6 +21,18 @@ export default function NavBar() {
         </li>
         <li>
           <Link to="/articles">Articles</Link>
+        </li>
+        {isLoggedIn && (
+          <li style={{ color: "white" }}>
+            Logged in as {email}
+          </li>
+        )}
+        <li>
+          {isLoggedIn ? (
+            <button onClick={() => signOut(getAuth())}>Log out</button>
+          ) : (
+            <button onClick={() => navigate("/login")}>Log in</button>
+          )}
         </li>
       </ul>
     </nav>
