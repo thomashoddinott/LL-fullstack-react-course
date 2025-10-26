@@ -20,6 +20,7 @@ app.use(express.json());
 let db;
 
 async function connectToDb() {
+  // TODO: swap local mongo (docker?) for dev and leave this for prod only (need to have mongo instance running full-time)
   const uri = process.env.MONGODB_URI;
 
   const client = new MongoClient(uri, {
