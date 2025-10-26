@@ -9,3 +9,23 @@ If !data (fresh mongo, etc.) ==> Need a deployment script to seed mongo with dat
 Generate new private key > https://console.firebase.google.com/u/0/project/ll-fullstack-react/settings/serviceaccounts/adminsdk
 
 # Build FE with `npm run build` and move to backend. TODO: automate
+
+# GCloud CLI
+https://docs.cloud.google.com/sdk/docs/install
+
+Find the project: https://console.cloud.google.com/cloud-hub/home;board-filter=type:APP_HUB,key:application_name?project=ll-fullstack-react
+
+And (1) create; (2) link a billing account
+
+🚀 `sudo gcloud app deploy \Desktop/repos/LL-fullstack-react-course/backend/`
+
+Todo fix: 
+```
+Beginning deployment of service [default]...
+╔════════════════════════════════════════════════════════════╗
+╠═ Uploading 0 files to Google Cloud Storage                ═╣
+╚════════════════════════════════════════════════════════════╝
+File upload done.
+Updating service [default]...failed.                                     
+ERROR: (gcloud.app.deploy) Error Response: [13] An internal error occurred.
+```
