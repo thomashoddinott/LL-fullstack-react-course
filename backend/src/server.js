@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-import { MongoClient, ReturnDocument, ServerApiVersion } from "mongodb";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 const app = express();
 app.use(express.json());
@@ -39,7 +39,7 @@ app.post("/api/articles/:name/upvote", async (req, res) => {
     {
       $inc: { upvotes: 1 },
     },
-    { ReturnDocument: "after" }
+    { returnDocument: "after" }
   );
   res.json(updatedArticle);
 });
@@ -55,7 +55,7 @@ app.post("/api/articles/:name/comments", async (req, res) => {
       $push: { comments: newComment },
     },
     {
-      ReturnDocument: "after",
+      returnDocument: "after",
     }
   );
   res.json(updatedArticle);
