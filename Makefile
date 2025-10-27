@@ -14,4 +14,4 @@ move:
 	cp -r $(BUILD_DIR)/* $(TARGET_DIR)/
 
 deploy: build move
-	@echo "✅ Frontend built and moved to backend/public"
+	@echo "✅ Frontend built and moved to backend/dist"
