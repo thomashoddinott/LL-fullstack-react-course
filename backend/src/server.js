@@ -1,4 +1,5 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config({ path: path.resolve("../.env") });
 import express from "express";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import admin from "firebase-admin";
@@ -20,7 +21,6 @@ app.use(express.json());
 let db;
 
 async function connectToDb() {
-  // TODO: swap local mongo (docker?) for dev and leave this for prod only (need to have mongo instance running full-time)
   const uri = process.env.MONGODB_URI;
 
   const client = new MongoClient(uri, {
@@ -100,7 +100,7 @@ app.post("/api/articles/:name/comments", async (req, res) => {
   res.json(updatedArticle);
 });
 
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
 
 async function start() {
   await connectToDb();
