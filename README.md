@@ -1,4 +1,5 @@
 # Improvements
+- Fix firebase on frontend
 - Move `article-content.js` to mongoDB (artefact of tutorial) ==> `articles` collection is fine
 
 # Firebase
