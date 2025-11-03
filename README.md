@@ -1,5 +1,5 @@
 # Improvements
-- Fix firebase on frontend
+- Fix firebase on frontend (maybe not an issue, see this: https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public)
 - Move `article-content.js` to mongoDB (artefact of tutorial) ==> `articles` collection is fine
 
 # Firebase
