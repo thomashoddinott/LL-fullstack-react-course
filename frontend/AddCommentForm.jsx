@@ -1,11 +1,12 @@
 import { useState } from "react";
+import "./AddCommentForm.css";
 
 export default function AddCommentForm({ onAddComment }) {
   const [nameText, setNameText] = useState("");
   const [commentText, setCommentText] = useState("");
 
   return (
-    <div>
+    <div className="comment-form">
       <h3>Add a Comment</h3>
 
       <label>

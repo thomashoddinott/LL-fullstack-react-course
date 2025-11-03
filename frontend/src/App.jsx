@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/HomePage";
+// import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlesListPage from "./pages/ArticlesListPage";
 import ArticlesPage, { loader as articleLoader } from "./pages/ArticlePage";
@@ -17,7 +17,7 @@ const routes = [
     children: [
       {
         path: "/",
-        element: <HomePage />,
+        element: <ArticlesListPage />,
       },
       {
         path: "/about",
