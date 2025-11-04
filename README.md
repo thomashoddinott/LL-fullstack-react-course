@@ -1,6 +1,7 @@
 # Improvements
-- Fix firebase on frontend (maybe not an issue, see this: https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public)
 - Move `article-content.js` to mongoDB (artefact of tutorial) ==> `articles` collection is fine
+- Tweak style on login/sign up
+- Prepopulate the name of the user on the comment page
 
 # Firebase
 https://console.firebase.google.com/u/0/project/ll-fullstack-react/authentication/providers and enable email/password
