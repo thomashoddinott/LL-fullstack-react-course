@@ -48,6 +48,16 @@ app.get("/api/articles/:name", async (req, res) => {
   res.json(article);
 });
 
+app.get("/api/articles", async (req, res) => {
+  try {
+    const articles = await db.collection("articles").find({}).toArray();
+    res.json(articles);
+  } catch (err) {
+    console.error("Error fetching articles:", err);
+    res.sendStatus(500);
+  }
+});
+
 app.use(async function (req, res, next) {
   const { authtoken } = req.headers;
 
