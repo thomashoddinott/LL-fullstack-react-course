@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import "./CreateAccountPage.css";
 
 export default function CreateAccountPage() {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export default function CreateAccountPage() {
 
   async function createAccount() {
     if (password !== confirmPassword) {
-      setError("Password and Confirm Password do not match!");
+      setError("Passwords do not match");
       return;
     }
 
@@ -20,33 +21,42 @@ export default function CreateAccountPage() {
       await createUserWithEmailAndPassword(getAuth(), email, password);
       navigate("/articles");
     } catch (e) {
-      setError(e.message);
+      setError("Error creating account: " + e.message);
     }
   }
 
   return (
-    <>
+    <div className="create-account-container">
       <h1>Create Account</h1>
-      {error && <p>{error}</p>}
+
+      {error && <p className="error">{error}</p>}
+
       <input
+        type="email"
         placeholder="Your email address"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+
       <input
-        placeholder="Your password"
         type="password"
+        placeholder="Your password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+
       <input
-        placeholder="Confirm password"
         type="password"
+        placeholder="Confirm password"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
       />
+
       <button onClick={createAccount}>Create Account</button>
-      <Link to="/login">Already have an account? Log In</Link>
-    </>
+
+      <Link to="/login" className="login-link">
+        Already have an account? Log In
+      </Link>
+    </div>
   );
 }
