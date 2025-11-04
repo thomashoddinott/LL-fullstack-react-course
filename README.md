@@ -1,3 +1,6 @@
+# Improvements
+- Deploy on GCP.
+
 # Firebase
 https://console.firebase.google.com/u/0/project/ll-fullstack-react/authentication/providers and enable email/password
 
@@ -30,3 +33,4 @@ File upload done.
 Updating service [default]...failed.                                     
 ERROR: (gcloud.app.deploy) Error Response: [13] An internal error occurred.
 ```
+👆 Suppose something wrong with the build that needs debugging (see Makefile)
