@@ -1,5 +1,6 @@
 # Improvements
-- Deploy on GCP.
+- Deploy on GCP
+- Next time use local mongo (Docker) for dev (although this was good practice for prod environment)
 
 # Firebase
 https://console.firebase.google.com/u/0/project/ll-fullstack-react/authentication/providers and enable email/password
